@@ -30,3 +30,13 @@ In RDS you can enable Enhanced Monitoring which stores logs in CloudWtach for 30
 NB:
 * CloudWatch gathers metrics about CU utilization from the hypervisor for a DB instance;
 * Enhanced Monitoring gathers its metrics from an agent on the instance.
+
+#### Aurora
+
+Aurora typically involves a cluster of DB instances instead of a single instance. Each connection is handled by a specific DB instance. When you connect to an Aurora cluster, the host name and port that you specify point to an intermediate handler called an **endpoint**. Aurora uses the endpoint mechanism to abstract these connections. Thus, you don't have to hardcode all the hostnames or write your own logic for load-balancing and rerouting connections when some DB instances aren't available.
+
+For certain Aurora tasks, different instances or groups of instances perform different roles. For example, the primary instance handles all data definition language (DDL) and data manipulation language (DML) statements. Up to 15 Aurora Replicas handle read-only query traffic.
+
+Using endpoints you can map each connection to the appropriate instance or group of instances based on your use case.
+
+The custom endpoint provides load-balanced database connections based on criteria other than the read-only or read-write capability of the DB instances.

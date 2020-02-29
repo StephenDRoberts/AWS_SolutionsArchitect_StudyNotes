@@ -30,3 +30,23 @@ All data transferred between any type of gateway applicance and AWS storage is e
 *(**NB:** AWS Storage Gateway connects an on-premises software applicance with cloud-based storage to provide seamless integration with data security features between your on-premises IT environment and the AWS storage infrastructure.*
 
 Data stored in **Amazon Glacier** is protected by default; only vault owners have access to the Amazon Glacier resources they creates. Amazon Glacier encrypts your data at rest by default and supports secure data transit with SSL.
+
+#### AWS Shared Responsibility Model
+
+Security and Compliance is a shared responsibility between AWS and the customer. This shared model can help relieve customer's operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates. The customer assumes responsbility and management fo the guest operating system (including updates and security patches), other associated application software as well as the configuration of the AWS provided secruity group firewall.
+
+For example, with EC2s, AWS manages the security of the following assets:
+* Facilities
+* Physical security of hardware
+* Network infrastructure
+* Virtualization infrastructure
+
+The customer are responsible for the security of the following assets:
+* Amazon Machine Images (AMIs)
+* Operating systems
+* Applications
+* Data in transit
+* Data at rest
+* Data stores
+* Credentials
+* Policies and configuration

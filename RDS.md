@@ -31,6 +31,10 @@ NB:
 * CloudWatch gathers metrics about CU utilization from the hypervisor for a DB instance;
 * Enhanced Monitoring gathers its metrics from an agent on the instance.
 
+#### Failover
+
+In Amazon RDS, failover is automatically handled so that you cna resume DB operations as quickly as possible without administrative intervention in the event that your primary DB instance went down. When failing over, Amazon RDS simply flips the canonical name record (CNAME) for your DB instance to point at the standby, which is in turn promoted to become the new primary.
+
 #### Aurora
 
 Aurora typically involves a cluster of DB instances instead of a single instance. Each connection is handled by a specific DB instance. When you connect to an Aurora cluster, the host name and port that you specify point to an intermediate handler called an **endpoint**. Aurora uses the endpoint mechanism to abstract these connections. Thus, you don't have to hardcode all the hostnames or write your own logic for load-balancing and rerouting connections when some DB instances aren't available.

@@ -10,6 +10,8 @@ Security groups act at an ***instance level***, not the subnet level. Therefore,
 
 Security groups are **stateful** -> return traffic is automatically allowed, regardless of any rules.
 
+By default , Security Groups do not allow incoming traffic - a rule will need to be setup to allow inbound traffic. However, Security Groups allow all outbound traffic by default.
+
 #### NACLs
 
 To control the traffic in and out of your VPC network, you can use the Network Access Controls List.
@@ -19,3 +21,5 @@ It is an optional layer of security for your VPC and acts as a firewall for cont
 NACLs are **stateless** -> return traffic must be explicitly allowed by rules.
 
 Network ACL Rules are evaluated by rule number, from lowest to highest, and executed immediately when a matching allow/deny rule is found.
+
+By default NACLs allow **all** inbound and outbound IPv4 traffic.

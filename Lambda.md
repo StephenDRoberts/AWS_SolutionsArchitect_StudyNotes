@@ -11,3 +11,13 @@ The first time you create or update Lambda functions that use env variables in a
 However, if you wish to use encryption helpers and use KMS to encrypt env variables ***after your Lambda function is created***, you must create your own AWS KMS key and choose it instead of the default key. 
 
 Creating your own key gives you more flexibility, including the ability to create, rotate, disable, and define access controls, and to audit the encryption keys used to protect your data.
+
+#### Deployment Configurations
+
+You must choose one of the following deployment configration types to specify how traffic is shifted from the original AWS Lambda function version to the new AWS Lambda function version:
+
+1. **Canary** - Traffic is shifted in two increments. You can choose from predefined canary options that specify the percentage of traffic shifted to your updated Lambda function version in the 1st increment and the interval, in minutes, before the remaining traffic is shifted in the 2nd increment.
+
+2. **Linear** - Traffic is shifted in equal increments with an equal number of minutes between each increment.
+
+3. **All-at-once**

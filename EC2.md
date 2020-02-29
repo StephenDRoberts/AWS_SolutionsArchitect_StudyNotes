@@ -25,6 +25,22 @@ Raid 0 is used when I/O performance is more important than fault tolerance, eg i
 
 #### EBS Volumes
 
+An Amazon EBS volume is a durable, block-level storage device that you can attach to a single EC2 instance. You can use EBS volumes as a primary storage for data that requires frequent updates, such as thesystem drive for an instance or storagefor a DB application. You can also use them for throughput-intensive applications that perform continuous disk scans. EBS volumes persis independently from the running life of an EC2 instance.
+
+When you create an EBS volume in an AZ, it is automatically replicated **within that zone** to prevent data loss due to a failure of any single hardware component.
+
+An EBS volume can only be attached to one EC2 instance at a time.
+
+After you create a volume, you can attach it to any EC2 instance in the same AZ.
+
+An EBS volume is off-instance storage that can persist independently from the life of an instance. You can specify not to terminate the EBS volume when you terminate the EC2 instance during instance creation.
+
+EBS volumes support live configuration changes while in production which means that you can modify the volume type, volume size and IOPS capacity without service interruptions.
+
+Amazon EBS encryptions uses 256-bit Advanced Encryption Standard algorithms (AES-256).
+
+EBS volumes offer 99.999% SLA.
+
 EBS Snapshots occur asynchronously so you can use the EBS volume as normal while a snapshot is in progress.
 
 This means that the point-in-time snapshot is created immediately but the status of the snapshot is 'pending'. until the snapshot is complete.
@@ -37,3 +53,11 @@ You can use Amazon Data Lifecycle Manager (Amazon DLM) to automate the creation,
 Combined with the monitoring features of Amazon CloudWatch Events and AWS CloudTrail, Amazon DLM provides a complete backup solution for EBS volumes at no additional cost.
 
 Amazon DLM is the fastest and most cost-effective solution that provides an automated way of backing up your EBS volumes.
+
+#### Auto Scaling
+
+**Cooldown** ensures that the Auto Scaling group does not launch or terminate additional EC2 instances before the previous scaling activity takes effect.
+
+Its default value is 300 seconds.
+
+It is a configurable setting for your Auto Scaling group.

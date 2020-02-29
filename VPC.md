@@ -1,13 +1,21 @@
 # Virtual Private Clouds (VPCs)
 
+Security Groups usually control the list of ports that are allowed to be used by your EC2 instances and the NACLs control which network or list of IP addresses can connect to your whole VPC.
+
 #### Security Groups
 
 Act as a virtual firewall for your instance to control inbound and outbound traffic.
 You can assign up to five security groups to the instance.
-Security groups act at an ***instance level***, not the subnet level. Therefore, each instance in a subnet in your VPC could be assinged to a different set of security groups. If you don't specify a particular group at launc time, the instance is automatically assigned to the default security group of the VPC. 
+Security groups act at an ***instance level***, not the subnet level. Therefore, each instance in a subnet in your VPC could be assinged to a different set of security groups. If you don't specify a particular group at launch time, the instance is automatically assigned to the default security group of the VPC. 
+
+Security groups are **stateful** -> return traffic is automatically allowed, regardless of any rules.
 
 #### NACLs
 
 To control the traffic in and out of your VPC network, you can use the Network Access Controls List.
 
-It is an optional layer of security for your VPC and acts as a firewal for controlling traffic in and out of one or more subnets.
+It is an optional layer of security for your VPC and acts as a firewall for controlling traffic in and out of one or more subnets. You might set up a network ACL with rules similar to your security groups in order to add an additional layer of security to your VPC.
+
+NACLs are **stateless** -> return traffic must be explicitly allowed by rules.
+
+Network ACL Rules are evaluated by rule number, from lowest to highest, and executed immediately when a matching allow/deny rule is found.

@@ -1,5 +1,7 @@
 # Lambda
 
+AWS Lambda supports synchronous and asynchronous invocation of a Lambda function. You can control the invocation type only when you invoke a Lambda function. When you use an AWS service as a trigger, the invocation type is predetermined for each service. You have no control over the invocation type that these event sources use when they invoke your Lambda function. 
+
 #### Security
 
 When you create or update Lambda functions that use environment variables, AWS Lambda encrypts them using the AWS KMS. When your function is invoked, those values are decrypted and made available to the lambda code.

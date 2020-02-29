@@ -28,3 +28,12 @@ Raid 0 is used when I/O performance is more important than fault tolerance, eg i
 EBS Snapshots occur asynchronously so you can use the EBS volume as normal while a snapshot is in progress.
 
 This means that the point-in-time snapshot is created immediately but the status of the snapshot is 'pending'. until the snapshot is complete.
+
+You can use Amazon Data Lifecycle Manager (Amazon DLM) to automate the creation, retention and deletion of snapshots taken to back up your Amazon EBS volumes. Automating snapshot management helps you to:
+* Protect valuable data by enforcing a regular backup schedule
+* Retain backups as required by auditors or internal compliance
+* Reduce storage costs by deleting outdated backups
+
+Combined with the monitoring features of Amazon CloudWatch Events and AWS CloudTrail, Amazon DLM provides a complete backup solution for EBS volumes at no additional cost.
+
+Amazon DLM is the fastest and most cost-effective solution that provides an automated way of backing up your EBS volumes.

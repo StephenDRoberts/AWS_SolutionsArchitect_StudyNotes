@@ -32,3 +32,11 @@ In an enterprise identity federation, you can authenticate users in your organiz
 
 You can use **Cognito** to deliver temporary, limited-privilege credentials to your application so that your users can access AWS resources. Amazon Cognito Identity Pools support both authenticated and unauthenticated identities. You can retrieve a unique Cognito identifier (**Identity ID**) for your end user immediately if you're allowing unauthenticated users or after you've set the login tokens in the credentials provider if you're authenticating users.
 
+Cognito is primarily used for user authentication and not for providing access to your AWS resources. 
+
+SSO does not issue short-lived credentials by itself. SSO is a cloud SSO service that makes it easy to centrally manage SSO access to multiple AWS accounts and business applications.
+
+**STS**
+AWS Security Token Service (AWS STS) is the service that you can use to create and provide trusted users with temporary security credentials that can control access to your AWS resources. Temporary security credentials work almost identically to the long-term access key credentials that your IAM users can use.
+
+

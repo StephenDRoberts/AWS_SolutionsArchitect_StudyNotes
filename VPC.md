@@ -23,3 +23,9 @@ NACLs are **stateless** -> return traffic must be explicitly allowed by rules.
 Network ACL Rules are evaluated by rule number, from lowest to highest, and executed immediately when a matching allow/deny rule is found.
 
 By default NACLs allow **all** inbound and outbound IPv4 traffic.
+
+#### Peering
+
+A VPC peering connection is a networking connection between two VPCs that enables you to route traffic between them privately. Instances in either VPC can communicate with each other as if they are within the same network. You can create a VPC peering connection between your own VPCs, with a VPC in another AWS account, or with a VPC in a different Region.
+
+AWS uses the existing infrastructure of a VPC to create a VPC peering connection; it is neither a gateway nor a VPN connection and does not rely on a separate piece of physical hardware. There is no single point of failure for communciation or a bandwith bottleneck.

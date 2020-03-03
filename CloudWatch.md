@@ -16,3 +16,8 @@ Custom metrics than can be set up:
 * Page file utilization
 * Log collection
 
+#### CloudWatch & Lambda
+
+AWS Lambda automatically monitors functions on your behalf, reporting metrics through Amazon CloudWatch. These metrics include total invocation request, latency, and error rates. The throttles, Dead Letter Queues errors and Iterator age for stream-based invocations are also monitored.
+
+You can monitor metrics for lambda and view logs by using the Lambda console, the CloudWatch console, the AWS CLI, or the CloudWatch API.

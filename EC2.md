@@ -61,3 +61,8 @@ Amazon DLM is the fastest and most cost-effective solution that provides an auto
 Its default value is 300 seconds.
 
 It is a configurable setting for your Auto Scaling group.
+
+#### Pricing
+
+You will be billed when your Reserved Instance is in `terminated` state
+You will be billed when your On-Demand instance is preparing to hibernate with a `stopping` state.

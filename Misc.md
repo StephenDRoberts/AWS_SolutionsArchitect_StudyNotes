@@ -35,3 +35,9 @@ By default, trails log management evens but *not* data events.
 1. OpsWorks for Chef Automate
 2. OpsWorks for Puppet Enterprise
 3. OpsWorks Stacks
+
+#### SWF
+
+A decision task tells the decider the state of the workflow execution.  The decider can be viewed as a special type of worker. Like workers, it can be written in any language and asks Amazon SWF for tasks. However it handles special tasks called decision tasks.
+
+Amazon SWF issues decision tasks whenever a workflow execution has transitions such as an activity task completing or timing out. A decision task contains information on the inuts, outputs, and current state of previously initiated activity tasks. Your decider uses this data to decide the next steps, including any new activity tasks and returns those to Amazon SWF. SWF in turn enacts these decisions, initiating new activity tasks where appropriate and monitoring them.

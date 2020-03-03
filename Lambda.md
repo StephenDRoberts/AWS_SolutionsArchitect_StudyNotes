@@ -21,3 +21,7 @@ You must choose one of the following deployment configration types to specify ho
 2. **Linear** - Traffic is shifted in equal increments with an equal number of minutes between each increment.
 
 3. **All-at-once**
+
+ #### CloudWatch & Lambda
+ 
+ AWS Lambda automatically monitors functions on your behalf, reporting metrics through Amazon CloudWatch. Thes metrics include total invocation request, latency, and error rates. The throttles, Dead Letter Queues errors an d Iterator age for stream-based invocations are also monitored. You can monitor metrics for lambda and view logs by using the Lambda console, the CloudWatch console, the AWS CLI, or the CloudWatch API.

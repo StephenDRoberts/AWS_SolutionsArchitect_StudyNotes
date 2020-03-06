@@ -66,3 +66,10 @@ It is a configurable setting for your Auto Scaling group.
 
 You will be billed when your Reserved Instance is in `terminated` state
 You will be billed when your On-Demand instance is preparing to hibernate with a `stopping` state.
+
+#### Groups
+
+You can launch EC2 instances in a placement group, which determines how instances are placed on underlying hardware. When you create a placement group, you specify one of the following strategies for the group:
+
+* **Cluster** - clusters instances into a low-latency group in a single Availability Zone
+* **Spread** - spreads instances across underlying hardware

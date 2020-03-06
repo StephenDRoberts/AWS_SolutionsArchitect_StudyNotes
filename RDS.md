@@ -7,7 +7,7 @@ Remember that RDSs do not scale well for the following reasons:
 * It generally incyrs the performance costs of an ACID-compliant transaction system
 * It uses expensive joins to reassemble
 
-Mutli-AZ dat replication is *synchronous*
+Mutli-AZ data replication is *synchronous*
 Read replica data replication is *asynchronous*
 
 ##### Security
@@ -44,3 +44,15 @@ For certain Aurora tasks, different instances or groups of instances perform dif
 Using endpoints you can map each connection to the appropriate instance or group of instances based on your use case.
 
 The custom endpoint provides load-balanced database connections based on criteria other than the read-only or read-write capability of the DB instances.
+
+A *reader endpoint* for an Aurora DB cluster provides load-balancing support for read-only connections to the DB cluster. Use the reader endpoint for read operations, such as queries. By processing those statements on the read-only Aurora Replicas, this endpoint reduces the overhead on the primary instance. It also helps the cluster to scale the capacity to handle simultaneous `SELECT` queries, proportional to the number of Aurora Replicas in the cluster. Each Aurora DB cluster has one reader endpoint.
+
+If the cluster contains one or more Aurora Replicas, the reader endpoing load-balances each connection request among the Aurora Replicas. In that case, you can only perform read-only statements such as `SELECT` in that session. If the cluster only contains a primary instance and no Aurora Replicas, the reader endpoint connects to the primary isntance. In that case, you can perform write operations through the endpoint.
+
+#### Read Replicas
+
+Amazon RDS Read Replicas provide enhanced performance and durability for database (DB) instances. This feature makes it easy to eastically scel out beyond the capacity constraints of a single DB instance for read-heavy database workloads.
+
+You can create one or more replicas of a given source DB instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput. Read replicase can also be promoted when needed to become standalone DB instances. Read replicas are available in Amazon RDS for MySQL, MariaDB, Oracle and PostgreSQL, as well as Amazon Aurora.
+
+Read replicas provide elasticity to your Amazon RDS database and improves performance of the primary database by taking workload from it.

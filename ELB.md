@@ -17,3 +17,7 @@ Application Load Balancers support path-based routing, host-based routing and su
 ---
 
 Using an Elastic Load Balancer is an ideal solution for adding elasticity to your application. Alternatively, you can also create a policy in Route 53, such as a Weighted routing policy, to evenly distribute the traffic to 2 or more EC2 instances.
+
+---
+
+ELBs are designed to run in one region only and not accross multiple regions.
